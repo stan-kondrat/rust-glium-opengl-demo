@@ -2,10 +2,10 @@
 
 ## Prepare environment 
 
-Install (Rust 1.10)[https://www.rust-lang.org/en-US/downloads.html]
+Install **Rust 1.10** https://www.rust-lang.org/en-US/downloads.html
 
-```
-cargo test
-cargo run
+```shell
+$ cargo test
+$ cargo run
 
 ```
