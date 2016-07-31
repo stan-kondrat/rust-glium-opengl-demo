@@ -5,3 +5,4 @@ authors = ["Stan Kondrat <stan.kondrat@gmail.com>"]
 repository = "https://github.com/stan-kondrat/rust-glium-opengl-demo.git"
 
 [dependencies]
+glium = "*"
