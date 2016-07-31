@@ -79,3 +79,21 @@ impl<'a> Triangle {
             .unwrap();
     }
 }
+
+#[test]
+#[ignore]
+fn test_triangle() {
+    assert!(false);
+}
+
+#[test]
+#[ignore]
+fn test_triangle_direction() {
+    assert!(false);
+}
+
+#[test]
+#[ignore]
+fn test_triangle_set_target() {
+    assert!(false);
+}
