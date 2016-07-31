@@ -1,6 +1,7 @@
 #[macro_use]
 extern crate glium;
 
+mod text;
 
 fn main() {
 
@@ -50,6 +51,9 @@ fn main() {
 
     let mut t: f32 = -0.5;
 
+    let mut logs = text::Text::new(&display);
+    logs.set_text(String::from("Hello world!"));
+
     loop {
 
         // we update `t`
@@ -77,6 +81,8 @@ fn main() {
                   &uniforms,
                   &Default::default())
             .unwrap();
+
+        logs.set_target(&mut target);
 
         target.finish().unwrap();
 

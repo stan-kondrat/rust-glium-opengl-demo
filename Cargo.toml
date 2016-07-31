@@ -6,3 +6,4 @@ repository = "https://github.com/stan-kondrat/rust-glium-opengl-demo.git"
 
 [dependencies]
 glium = "*"
+glium_text = "*"
