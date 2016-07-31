@@ -2,6 +2,7 @@
 extern crate glium;
 
 mod text;
+mod fps;
 
 fn main() {
 
@@ -52,7 +53,7 @@ fn main() {
     let mut t: f32 = -0.5;
 
     let mut logs = text::Text::new(&display);
-    logs.set_text(String::from("Hello world!"));
+    let mut fps = fps::FPS::new();
 
     loop {
 
@@ -82,6 +83,8 @@ fn main() {
                   &Default::default())
             .unwrap();
 
+        fps.calc();
+        logs.set_text(fps.to_string());
         logs.set_target(&mut target);
 
         target.finish().unwrap();
