@@ -11,6 +11,8 @@ pub struct Triangle {
     indices: glium::index::NoIndices,
     program: glium::Program,
     pub direction: f32,
+    pub position_x: f32,
+    pub position_y: f32,
 }
 
 impl<'a> Triangle {
@@ -18,9 +20,9 @@ impl<'a> Triangle {
 
         implement_vertex!(Vertex, position);
 
-        let vertex1 = Vertex { position: [-0.25, -0.5] };
-        let vertex2 = Vertex { position: [0.0, 0.5] };
-        let vertex3 = Vertex { position: [0.25, -0.5] };
+        let vertex1 = Vertex { position: [-0.01, -0.02] };
+        let vertex2 = Vertex { position: [0.0, 0.02] };
+        let vertex3 = Vertex { position: [0.01, -0.02] };
         let shape = vec![vertex1, vertex2, vertex3];
 
         let vertex_buffer = glium::VertexBuffer::new(display, &shape).unwrap();
@@ -54,6 +56,8 @@ impl<'a> Triangle {
             indices: indices,
             program: program,
             direction: 0.0,
+            position_x: 0.0,
+            position_y: 0.0,
         }
     }
 
@@ -67,7 +71,7 @@ impl<'a> Triangle {
                 [ angle.cos(), angle.sin(), 0.0, 0.0],
                 [-angle.sin(), angle.cos(), 0.0, 0.0],
                 [0.0, 0.0, 1.0, 0.0],
-                [0.0, 0.0, 0.0, 1.0f32], // x: 1=left, y: 1=top
+                [self.position_x, self.position_y, 0.0, 1.0f32], // x: 1=left, y: 1=top
             ]
         };
 
